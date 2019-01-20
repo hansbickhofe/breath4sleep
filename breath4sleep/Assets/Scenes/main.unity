@@ -531,7 +531,7 @@ MonoBehaviour:
   btnExit: {fileID: 1959800932}
   buttons: {fileID: 1496550198}
   canvas: {fileID: 462718812}
-  leds: {fileID: 0}
+  leds: {fileID: 791452583}
   period: 1
 --- !u!4 &786055123
 Transform:

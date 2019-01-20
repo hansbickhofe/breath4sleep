@@ -62,7 +62,7 @@ public class main : MonoBehaviour {
   // Use this for initialization
   void Start () {
     Screen.sleepTimeout = SleepTimeout.NeverSleep;
-
+    leds.SetActive (false);
   }
 
   // Update is called once per frame
@@ -72,10 +72,10 @@ public class main : MonoBehaviour {
 
       if (runtime <= 0.0f) {
         ended = true;
-        Application.Quit ();
+        exitApp();
       } else if (Time.time > nextActionTime) {
         nextActionTime += period;
-        var currentMinute = Mathf.Floor (runtime / 60)+1;
+        var currentMinute = Mathf.Floor (runtime / 60) + 1;
         print (currentMinute);
       }
     }
@@ -84,10 +84,11 @@ public class main : MonoBehaviour {
   }
 
   public void run8Minutes () {
-    runtime = 8 * 60f;
+    runtime = (.25f * 60f);
     started = true;
     print ("runtime 8min, hide canvas");
     canvas.SetActive (false);
+    leds.SetActive (true);
 
   }
   public void run20Minutes () {
@@ -95,6 +96,7 @@ public class main : MonoBehaviour {
     started = true;
     print ("runtime 20min, hide canvas");
     canvas.SetActive (false);
+    leds.SetActive (true);
   }
 
   public void exitApp () {
